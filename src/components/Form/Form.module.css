@@ -1,3 +1,9 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .input {
   border-radius: 8px 0 0 8px;
   outline: none;
@@ -6,15 +12,16 @@
 
 form {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  width: 100%;
 }
 
 .button {
   border-radius: 0 8px 8px 0;
   color: #fff;
-  background-color: blue;
+  background-color: #673ab7;
   border: none;
   height: 100%;
-  width: 86px;
+  width: 12%;
   font-weight: bold;
 }

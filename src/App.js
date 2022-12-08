@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
+import * as React from 'react';
 
 import { MessageList } from './components/MessageList/MessageList';
 import { Form } from './components/Form/Form';
+import { Chats } from './components/Chats/Chats';
 import { AUTHOR } from './constants';
 
 import './App.css'
 
 function App() {
+  //Сообщения
   const [messages, setMessages] = useState([]);
 
   const addMessage = (newMessage) => {
@@ -33,9 +36,12 @@ function App() {
     <>
       <div className='center'>
         <h1>Welcome to chat!</h1>
-        <Form addMessage={addMessage} />
+        <div className='wrapperForChats'>
+          <Chats />
+          <Form addMessage={addMessage} />
+        </div>
         <MessageList messages={messages} />
-      </div>
+      </div >
     </>
   );
 }

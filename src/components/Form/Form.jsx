@@ -2,6 +2,10 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { AUTHOR } from '../../constants'
 
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+import TextField from '@mui/material/TextField';
+
 import styles from './Form.module.css'
 
 export function Form({ addMessage }) {
@@ -22,16 +26,23 @@ export function Form({ addMessage }) {
 
   return (
     <>
-      <h1>Form</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          className={styles.input}
-          type="text"
-          value={text}
-          placeholder='input message'
-          onChange={(event) => setText(event.target.value)}
-        />
-        <button className={styles.button} type='submit'>submit message</button>
+        <div className={styles.wrapper}>
+          <TextField fullWidth id="fullWidth"
+            type='text'
+            value={text}
+            autoFocus
+            noValidate
+            autoComplete="off"
+            placeholder='input message'
+            onChange={(event) => setText(event.target.value)}
+            size="small"
+          />
+          <Button className={styles.button} type='submit' size="medium"
+            variant="contained" endIcon={<SendIcon />}>
+            Send
+          </Button>
+        </div>
       </form>
     </>
   )
