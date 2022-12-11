@@ -7,8 +7,10 @@ export function MessageList({ messages }) {
     <>
       <h1>MessageList</h1>
       <ul>
-        {messages.map((item) => (
-          <li key={uuid()}>{item.text}</li>
+        {messages.map((message) => (
+          <li key={uuid()}>
+            {message.author} : {message.text}
+          </li>
         ))}
       </ul>
     </>

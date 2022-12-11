@@ -22,8 +22,6 @@ export function Form({ addMessage }) {
     setText('')
   }
 
-  console.log('input', text)
-
   return (
     <>
       <form onSubmit={handleSubmit}>
